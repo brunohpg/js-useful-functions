@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eduhds/eduhds-js-useful-functions.git"
+    "url": "git+https://github.com/eduhds/js-useful-functions.git"
   },
   "keywords": [
     "js",
@@ -18,7 +18,7 @@
   "author": "Eduardo Henrique",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eduhds/eduhds-js-useful-functions/issues"
+    "url": "https://github.com/eduhds/js-useful-functions/issues"
   },
-  "homepage": "https://github.com/eduhds/eduhds-js-useful-functions#readme"
+  "homepage": "https://github.com/eduhds/js-useful-functions#readme"
 }
