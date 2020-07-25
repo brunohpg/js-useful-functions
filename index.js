@@ -2,7 +2,7 @@
  * Format Date object to Brazil format
  *
  * @param {Date} date
- * @returns {string}
+ * @returns {string} date as DD/MM/YYYY
  */
 function formatDateBR(date) {
     let month = date.getMonth() + 1;
