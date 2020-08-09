@@ -1,6 +1,5 @@
 /**
  * Format Date object to Brazil format
- *
  * @param {Date} date
  * @returns {string} date as DD/MM/YYYY
  */
@@ -10,6 +9,18 @@ function formatDateBR(date) {
     return `${date.getDate()}/${month}/${date.getFullYear()}`;
 }
 
+/**
+ * Format text to lowercase and without special caracteres
+ * @param {string} text
+ */
+function formatTextToFilter(text) {
+    return text
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+}
+
 module.exports = {
-    formatDateBR
+    formatDateBR,
+    formatTextToFilter
 };
