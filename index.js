@@ -12,7 +12,7 @@ function formatDateBR(date) {
 }
 
 /**
- * Format text to lowercase and without special caracteres
+ * Format text to lowercase and without special characters
  * @param {string} text
  */
 function formatTextToFilter(text) {
@@ -22,7 +22,62 @@ function formatTextToFilter(text) {
         .toLowerCase();
 }
 
+/**
+ * Mask text
+ * @param {string} maskType
+ * @param {Function} onChangeText
+ * @returns {Function}
+ */
+function maskText(maskType, onChangeText) {
+    return function (text) {
+        switch (maskType) {
+            case 'cpf':
+                onChangeText(
+                    text
+                        .replace(/\D/g, '')
+                        .replace(/(\d{3})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+                        .replace(/(-\d{2})\d+?$/, '$1')
+                );
+                break;
+            case 'cnpj':
+                onChangeText(
+                    text
+                        .replace(/\D/g, '')
+                        .replace(/(\d{2})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d)/, '$1.$2')
+                        .replace(/(\d{3})(\d)/, '$1/$2')
+                        .replace(/(\d{4})(\d)/, '$1-$2')
+                        .replace(/(-\d{2})\d+?$/, '$1')
+                );
+                break;
+            case 'phone':
+                onChangeText(
+                    text
+                        .replace(/\D/g, '')
+                        .replace(/(\d{2})(\d)/, '($1) $2')
+                        .replace(/(\d{4})(\d)/, '$1-$2')
+                        .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+                        .replace(/(-\d{4})\d+?$/, '$1')
+                );
+                break;
+            case 'cep':
+                onChangeText(
+                    text
+                        .replace(/\D/g, '')
+                        .replace(/(\d{5})(\d)/, '$1-$2')
+                        .replace(/(-\d{3})\d+?$/, '$1')
+                );
+                break;
+            default:
+                break;
+        }
+    };
+}
+
 module.exports = {
     formatDateBR,
-    formatTextToFilter
+    formatTextToFilter,
+    maskText
 };
