@@ -8,3 +8,5 @@ export function maskText(
     maskType: 'cpf' | 'cnpj' | 'phone' | 'cep',
     onChangeText: (text) => void
 ): (text: string) => void;
+
+export function sortAlphabeticallyByChild(key: string): boolean;

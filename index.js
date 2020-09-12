@@ -76,8 +76,21 @@ function maskText(maskType, onChangeText) {
     };
 }
 
+/**
+ * Sort array of object alphabetically by child property
+ * @param {string} k
+ */
+function sortAlphabeticallyByChild(k) {
+    return function (a, b) {
+        var textA = a[k].toUpperCase().trim();
+        var textB = b[k].toUpperCase().trim();
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+    };
+}
+
 module.exports = {
     formatDateBR,
     formatTextToFilter,
-    maskText
+    maskText,
+    sortAlphabeticallyByChild
 };
