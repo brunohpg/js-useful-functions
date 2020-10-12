@@ -88,9 +88,21 @@ function sortAlphabeticallyByChild(k) {
     };
 }
 
+/**
+ * Format number as: 100000.00 to 100.000,00
+ * @param {Number} value
+ */
+function formatMoneyBR(value) {
+    return value
+        .toFixed(2)
+        .replace('.', ',')
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+}
+
 module.exports = {
     formatDateBR,
     formatTextToFilter,
     maskText,
-    sortAlphabeticallyByChild
+    sortAlphabeticallyByChild,
+    formatMoneyBR
 };

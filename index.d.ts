@@ -10,3 +10,5 @@ export function maskText(
 ): (text: string) => void;
 
 export function sortAlphabeticallyByChild(key: string): boolean;
+
+export function formatMoneyBR(value: number): string;
