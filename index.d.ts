@@ -12,3 +12,5 @@ export function maskText(
 export function sortAlphabeticallyByChild(key: string): boolean;
 
 export function formatMoneyBR(value: number): string;
+
+export function capitalize(text: string): string;

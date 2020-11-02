@@ -99,10 +99,20 @@ function formatMoneyBR(value) {
         .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 }
 
+/**
+ * Return text with first letter to uppercase
+ * @param {string} text
+ * @returns {string}
+ */
+function capitalize(text) {
+    return text.replace(/^\w/, c => c.toUpperCase());
+}
+
 module.exports = {
     formatDateBR,
     formatTextToFilter,
     maskText,
     sortAlphabeticallyByChild,
-    formatMoneyBR
+    formatMoneyBR,
+    capitalize
 };
