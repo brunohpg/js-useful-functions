@@ -91,9 +91,10 @@ function maskText(maskType, onChangeText) {
  */
 function sortAlphabeticallyByChild(k) {
     return function (a, b) {
-        var textA = a[k].toUpperCase().trim();
-        var textB = b[k].toUpperCase().trim();
-        return textA < textB ? -1 : textA > textB ? 1 : 0;
+        var textA = a[k];
+		var textB = b[k];
+		if (typeof textA === 'string') textA = textA.toUpperCase().trim();
+		if (typeof textB === 'string') textB = textB.toUpperCase().trim();
     };
 }
 
