@@ -81,10 +81,13 @@ function maskText(maskType, onChangeText) {
                 break;
             case 'money':
                 onChangeText(
-                    text.replace(
-                        /^(?!0\.00)[1-9]\d{0,2}(,\d{3})*(\.\d\d)?$/g,
-                        '$1'
-                    )
+                    text
+                        .replace(/\D/g, '')
+                        .replace(/(\d{1})/, '0,0$1')
+                        .replace(/(\d)(,\d{2})/, '$1$2')
+                    //.replace(/(\d{2})(\d{2})/, '$1$2')
+                    //.replace(/(\d{3},)(\d{2})/, '$1$2')
+                    //.replace(/(\d{4},)(\d{2})/, '$1$2')
                 );
                 break;
             default:
