@@ -73,10 +73,18 @@ function maskText(maskType, onChangeText) {
             case 'data':
                 onChangeText(
                     text
-                        .replace(/\D/g, "")
-                        .replace(/(\d{2})(\d)/, "$1/$2")
-                        .replace(/(\d{2})(\d)/, "$1/$2")
-                        .replace(/(\d{4})\d+?$/, "$1")
+                        .replace(/\D/g, '')
+                        .replace(/(\d{2})(\d)/, '$1/$2')
+                        .replace(/(\d{2})(\d)/, '$1/$2')
+                        .replace(/(\d{4})\d+?$/, '$1')
+                );
+                break;
+            case 'money':
+                onChangeText(
+                    text.replace(
+                        /^(?!0\.00)[1-9]\d{0,2}(,\d{3})*(\.\d\d)?$/g,
+                        '$1'
+                    )
                 );
                 break;
             default:
@@ -92,9 +100,9 @@ function maskText(maskType, onChangeText) {
 function sortAlphabeticallyByChild(k) {
     return function (a, b) {
         var textA = a[k];
-		var textB = b[k];
-		if (typeof textA === 'string') textA = textA.toUpperCase().trim();
-		if (typeof textB === 'string') textB = textB.toUpperCase().trim();
+        var textB = b[k];
+        if (typeof textA === 'string') textA = textA.toUpperCase().trim();
+        if (typeof textB === 'string') textB = textB.toUpperCase().trim();
     };
 }
 
