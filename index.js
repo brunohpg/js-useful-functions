@@ -86,9 +86,13 @@ function maskText(maskType, onChangeText) {
                 onChangeText(
                     text
                         .replace(/\D/g, '')
-                        .replace(/^(\d{1})$/g, 'R$ 0,0$1') // 0,01
-                        .replace(/^(\d{2})$/g, 'R$ 0,$1') // 0,12
-                        .replace(/^(\d{1,})(\d{2})$/g, 'R$ $1,$2') // 1,23
+                        .replace(/^(\d{1})$/g, '0,0$1')
+                        .replace(/^(\d{2})$/g, '0,$1')
+                        .replace(/^(\d{1,})(\d{2})$/g, '$1,$2')
+                        .replace(/^00(,\d{2})$/g, '0$1')
+                        .replace(/^00(\d)(,\d{2})$/g, '$1$2')
+                        .replace(/^0(\d)(,\d{2})$/g, '$1$2')
+                        .replace(/^(\d{1,})(,\d{2})$/g, 'R$ $1$2')
                 );
                 break;
             default:
