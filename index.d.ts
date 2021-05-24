@@ -5,7 +5,7 @@ export function formatDateBR(date: Date): string;
 export function formatTextToFilter(text: string): string;
 
 export function maskText(
-    maskType: 'cpf' | 'cnpj' | 'phone' | 'cep',
+    maskType: 'number' | 'cpf' | 'cnpj' | 'phone' | 'cep' | 'money',
     onChangeText: (text) => void
 ): (text: string) => void;
 

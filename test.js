@@ -1,5 +1,13 @@
 const { maskText } = require('./index');
 
+console.log('=============== number ===============');
+
+let number = 'abc1234dsf75765fgf';
+
+maskText('number', txt => console.log(txt))(number);
+
+console.log('=============== money ===============');
+
 let v1 = '1a',
     v2 = '12a',
     v3 = '123a',

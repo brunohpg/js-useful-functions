@@ -31,6 +31,9 @@ function formatTextToFilter(text) {
 function maskText(maskType, onChangeText) {
     return function (text) {
         switch (maskType) {
+            case 'number':
+                onChangeText(text.replace(/\D/g, ''));
+                break;
             case 'cpf':
                 onChangeText(
                     text
