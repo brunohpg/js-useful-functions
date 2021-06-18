@@ -5,6 +5,11 @@ function emailIsValid(email) {
     return reg.test(email);
 }
 
+function phoneIsValid(phone) {
+    let reg = /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/;
+    return reg.test(phone);
+}
+
 function cpfIsValid(cpf) {
     let reg = /[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}/;
     return reg.test(cpf);
@@ -22,5 +27,6 @@ function cpfcnpjIsValid(cpfcnpj) {
 }
 
 module.exports = {
-    emailIsValid
+    emailIsValid,
+    phoneIsValid
 };

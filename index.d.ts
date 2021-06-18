@@ -14,5 +14,3 @@ export function sortAlphabeticallyByChild(key: string): boolean;
 export function formatMoneyBR(value: number): string;
 
 export function capitalize(text: string): string;
-
-export function emailIsValid(email: string): boolean;

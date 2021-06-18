@@ -1,4 +1,4 @@
-const { emailIsValid } = require('./src/Validation');
+const { emailIsValid, phoneIsValid } = require('./src/Validation');
 
 /**
  * Format Date object to Brazil format
@@ -143,5 +143,6 @@ module.exports = {
     sortAlphabeticallyByChild,
     formatMoneyBR,
     capitalize,
-    emailIsValid
+    emailIsValid,
+    phoneIsValid
 };
