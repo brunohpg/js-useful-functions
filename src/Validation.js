@@ -6,13 +6,13 @@ function emailIsValid(email) {
 }
 
 function cpfIsValid(cpf) {
-    let reg = /[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}/
-    return reg.test(cpf)
+    let reg = /[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}/;
+    return reg.test(cpf);
 }
 
 function cnpjIsValid(cnpj) {
-    let reg = /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/
-    return reg.test(cnpj)
+    let reg = /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/;
+    return reg.test(cnpj);
 }
 
 function cpfcnpjIsValid(cpfcnpj) {
@@ -20,3 +20,7 @@ function cpfcnpjIsValid(cpfcnpj) {
         /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/;
     return reg.test(cpfcnpj);
 }
+
+module.exports = {
+    emailIsValid
+};

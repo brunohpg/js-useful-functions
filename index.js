@@ -1,3 +1,5 @@
+const { emailIsValid } = require('./src/Validation');
+
 /**
  * Format Date object to Brazil format
  * @param {Date} date
@@ -140,5 +142,6 @@ module.exports = {
     maskText,
     sortAlphabeticallyByChild,
     formatMoneyBR,
-    capitalize
+    capitalize,
+    emailIsValid
 };
