@@ -26,6 +26,12 @@ function cpfcnpjIsValid(cpfcnpj) {
     return reg.test(cpfcnpj);
 }
 
+function uuidIsValid(uuid) {
+    const reg =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    return re.test(String(uuid).toLowerCase());
+}
+
 module.exports = {
     emailIsValid,
     phoneIsValid
