@@ -9,6 +9,8 @@ export function maskText(
     onChangeText: (text) => void
 ): (text: string) => void;
 
+export function sortByKey(key: string): boolean;
+
 export function sortAlphabeticallyByChild(key: string): boolean;
 
 export function formatMoneyBR(value: number): string;

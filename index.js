@@ -104,10 +104,10 @@ function maskText(maskType, onChangeText) {
 }
 
 /**
- * Sort array of object alphabetically by child property
+ * Sort array of object by key property
  * @param {string} k
  */
-function sortAlphabeticallyByChild(k) {
+function sortByKey(k) {
     return function (a, b) {
         var textA = a[k];
         var textB = b[k];
@@ -115,6 +115,13 @@ function sortAlphabeticallyByChild(k) {
         if (typeof textB === 'string') textB = textB.toUpperCase().trim();
     };
 }
+
+/**
+ * Sort array of object alphabetically by child property
+ * @param {string} k
+ * @deprecated Use sortByKey instead
+ */
+var sortAlphabeticallyByChild = sortByKey;
 
 /**
  * Format number as: 100000.00 to 100.000,00
@@ -140,6 +147,7 @@ module.exports = {
     formatDateBR,
     formatTextToFilter,
     maskText,
+    sortByKey,
     sortAlphabeticallyByChild,
     formatMoneyBR,
     capitalize,
