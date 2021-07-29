@@ -143,6 +143,12 @@ function capitalize(text) {
     return text.replace(/^\w/, c => c.toUpperCase());
 }
 
+function numberFromText(text) {
+    let number = text.replace(/R\$/g, '').replace(',', '.').trim();
+    number = Number(number);
+    return number;
+}
+
 module.exports = {
     formatDateBR,
     formatTextToFilter,
@@ -152,5 +158,6 @@ module.exports = {
     formatMoneyBR,
     capitalize,
     emailIsValid,
-    phoneIsValid
+    phoneIsValid,
+    numberFromText
 };
