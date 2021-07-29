@@ -144,6 +144,7 @@ function capitalize(text) {
 }
 
 function numberFromText(text) {
+    if (!text) return 0;
     let number = text.replace(/R\$/g, '').replace(',', '.').trim();
     number = Number(number);
     return number;
