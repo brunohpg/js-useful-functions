@@ -150,6 +150,24 @@ function numberFromText(text) {
     return number;
 }
 
+function fileNameFromPath(path) {
+	if (!path) return '';
+	let pathReverse = path.split('').reverse();
+	let fileName = pathReverse
+		.slice(0, pathReverse.indexOf('/'))
+		.reverse()
+		.join('');
+	return fileName;
+}
+
+function extensionFromFileName(fileName) {
+	if (!fileName) return '';
+	let reversed = fileName.split('').reverse();
+	let extension = reversed.slice(0, reversed.indexOf('.')).reverse().join('');
+	return extension;
+}
+
+
 module.exports = {
     formatDateBR,
     formatTextToFilter,
@@ -160,5 +178,7 @@ module.exports = {
     capitalize,
     emailIsValid,
     phoneIsValid,
-    numberFromText
+    numberFromText,
+    fileNameFromPath,
+    extensionFromFileName
 };
