@@ -2,8 +2,5 @@
 
 Useful functions for use with Javascript
 
-### Install
-
-```sh
-yarn add git+https://git@github.com/eduhds/js-useful-functions.git
-```
+Now use:
+[https://github.com/eduhds/js-util](https://github.com/eduhds/js-util)
